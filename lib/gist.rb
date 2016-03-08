@@ -249,7 +249,7 @@ module Gist
     if response.code == '200'
       body.each do |gist|
         description = "#{gist['description'] || gist['files'].keys.join(" ")} #{gist['public'] ? '' : '(secret)'}"
-        puts "#{gist['html_url']} #{description.tr("\n", " ")}\n"
+        puts "#{gist['id'].ljust(25)} #{description.tr("\n", " ")}\n"
         $stdout.flush
       end
 
